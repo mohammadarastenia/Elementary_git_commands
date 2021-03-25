@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<title>git Commands</title>
+		<link href="git_commands.css" rel="stylesheet">
+	</head>
+	<body lang="en-US">
+	<h1 class="Season">Basic git for beginners</h1>
+	<hr class="line">
+	<h2 class="Season">Introduce git</h2>
+	<img src="image/git_init.png" name="Image1" alt="Git branch" align="bottom" width="80%" class="image" />
+	<p class="comment">
+		Go to directory that you want to control with git and write command:
+	</p>
+	<p class="command">
+		1-git init
+	</p>
+	<p class="comment">
+		Now git directory created in you current directory and git start :) </br>To chack what is you git status write:
+	</p>
+	<p class="command">
+		2-git status
+	</p>
+	<p class="comment">
+		After see status you should see some &quot;Untracked files&quot; and some file that git say &quot;Changes not staged for commit&quot; that zsh show them in red color. to add file to git write:
+	</p>
+	<p class="command">
+		3-&quot;git add &lt;file&gt;&quot;</font>
+	</p>
+	<p class="comment">
+		To add all file use:
+	</p>
+	<p class="command">
+		3.5-git add -A
+	</p>
+	<p class="comment">
+		Now all of your files are in stage state so ready to commit But!!!!! befor do it you should Introduce your self to git and say who you are:
+	</p>
+	<p class="command">
+		3.75-git config --global user.name &quot;mohammadarastenia&quot;
+	</p>
+	<p class="comment">
+		and set you email:
+	</p>
+	<p class="command">
+		3.85-git config --global user.email mohammadarastenia@yahoo.com
+	</p>
+	<p class="comment">
+		Now you can commit your file to git
+	</p>
+	<p class="command">
+		4-git commit -m 'git first commit :)'
+	</p>
+	<p class="comment">
+		Now git status show nothing file because all of them committed. but if you change you file first status become red and after add it it become green to you make new commit :)
+	</p>
+	<p class="command">
+		5-git log
+	</p>
+	<p class="comment">
+		Show all your commit to quit log press ‘<b>q’</b>
+	</p>
+	<p class="command">
+		6-git diff HEAD
+	</p>
+	<p class="comment">
+		Show difference between HEAD(your last commit) of a file with last changing.
+	</p>
+	<p class="command">
+		7-git diff --staged
+	</p>
+	<p class="comment">
+		Show difference between staged (git add …) file that still not committed. If you are not like changes you can pick up you file from stage:
+	</p>
+	<p class="command">
+		8-&quot;git reset &lt;file&gt;&quot;
+	</p>
+	<p class="comment">
+		But if you really don’t like all changes you can go to last commit ofyour file.
+	</p>
+	<p class="command">
+		9-&quot;git checkout -- &lt;file&gt;&quot;
+	</p>
+	<p class="comment">To
+		remove a file from git type:
+	</p>
+	<p class="command">
+		10-&quot;git rm &lt;file&gt;&quot;
+	</p>
+	<hr class="line">
+
+	<h2 class="Season">Git branch</h2>
+	<img src="image/01.svg" name="Image1" alt="Git branch" align="bottom" width="80%" class="image" />
+	<p class="comment">
+		To know witch branch you are working on it write:</font></font></p>
+	<p class="command">
+		1-git branch
+	</p>
+	<p class="comment">
+		This command show all branch and your working branch highlight and has ‘*’ nearby. To Create new branch write:
+	</p>
+	<p class="command">
+		2-&quot;git branch&lt;new_branch_name&gt;&quot;
+	</p>
+	<p class="comment">
+		Now you are creating you new branch but still working on old (master) branch. To switch in the new branch write:
+	</p>
+	<p class="command">
+		3-&quot;git checkout &lt;new_branch_name&gt;&quot;
+	</p>
+	<p class="comment">
+		Now you are ready to improve your branch as a copy of master branch. After complete your work, save(git add)
+		it and make a commit for it. first go to master (<font color="#000000">git checkout master</font>) and you see
+		all of your work vanish but don’t worry. Just type:
+	</p>
+	<p class="command">
+		4- &quot;git merge &lt;new_branch_name&gt;&quot;
+	</p>
+	<p class="comment">
+		To remove a branch from git Type:
+	</p>
+	<p class="command">
+		5-&quot;git branch -d &lt;new_branch_name&gt;&quot;
+	</p>
+	<hr class="line">
+	<h2 class="Season">Git on the Server/git remote </h2>
+	<img src="image/git-repos.svg" name="Image1" alt="Git clone" align="bottom" width="80%" class="image" />
+	<p class="comment">
+		The first step is to download a project repository from github by using command:
+	</p>
+	<p class="command">
+		1-&quot;git clone &lt;URL&gt;&quot;
+	</p>
+	<p class="comment">
+		Please don't make extra directory because git clone download all file in separate file.so don't worry.
+		After download you can change and save it after that commit them. but now if you see git status, it
+		says your branch is ahead of orgin/master by 1 commit (orgin is name of remote). So next step is to Upload
+		you change to github.
+	</p>
+	<p class="command">
+		2-git push orgin master
+	</p>
+	<p class="comment">
+		After this step github authenticate you to know that who you are and have permition to change and commit.
+		If all things are right you can see you changes on github. and number of commit increased by your push.
+	</p>
+	<p class="comment">
+		Now the problem is if some one change orginal repository on github, how do you update your local master to
+		last update. The answer is:
+	</p>
+	<p class="command">
+		3-git pull orgin master
+	</p>
+	<p class="comment">
+		Now forget all above commands ,assume you are in local host and your systwm admin want you to work on a
+		repository remotly. first step is to define your remote for git as an orgin by using:
+	</p>
+	<p class="command">
+		1.1-git remote add orgin &lt;URL of your repo&gt;
+	</p>
+	<p class="comment">
+		Now following command say you what is your remote
+	</p>
+	<p class="command">
+		1.2-git remote
+	</p>
+	<p class="comment">
+		After complete your work. following command upload your work, if every things is true.
+	</p>
+	<p class="command">
+		2.1-git push -u orgin master
+	</p>
+	<p class="comment">
+		At the end ,the worth thing that can happen for a project that have multiple Participant on it, is
+		Conflict betwaen two commit. this happen when you  corect a line in project and your partner
+		correct same line with other way. your frind upload it changes. when you want to upload your repo,
+		git crashes. because your change has conflict with now existing repo. In this position first step
+		for you is <font color="#000000"> <b>git pull</b> </font> to recieve changes.git now reporting all wrong and you can see where
+		conflict happen. <font color="#000000"> <b>git status</b> </font> can suggest you good solution.at last you should open conflicted file and
+		edit them.for never seeing this conflict we suggest you when working on multi user project
+		never Postponing your commit and immediately push it to your repo to this conflict not happen.
+	</p>
+	</body>
+</html>

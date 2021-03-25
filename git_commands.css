@@ -1,0 +1,37 @@
+p.comment{
+    font-size:14pt;
+    color:#069a2e;
+    line-height: 100%
+    margin-bottom: 0.1in; 
+    background: transparent; 
+    line-height: 115%;
+    font-family: "Agency FB";
+    background: transparent }
+p.command{
+	font-size:20px;
+	line-height: 100%
+    margin-bottom: 0.1in; 
+    background: transparent; 
+    line-height: 115%; 
+    background: transparent;
+    font-family: "Agency FB";
+    font-weight: bold
+}
+h2.Season{
+    color: red;
+    margin-top: 0.14in;
+    margin-bottom: 0.08in;
+    background: transparent;
+    background: transparent;
+    page-break-after: avoid 
+}
+hr.line{
+	height:2px;
+	border-width:0;
+	color:gray;
+	background-color:gray
+}
+img.image{
+	vertical-align:middle;
+	margin:20px 10%
+}
